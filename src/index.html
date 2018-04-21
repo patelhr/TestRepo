@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>MyApp</title>
+  <base href="/">
+  <script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback'></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script type="text/javascript">
+  
+    var verifyCallback = function(response) {
+      document.getElementById("demo").style.display = "";
+    };
+    var widgetId1;
+    var widgetId2;
+    var onloadCallback = function() {
+      grecaptcha.render('example3', {
+        'sitekey' : '6Lfsx1IUAAAAADe2xKY4BlcO-BwtYov_SwcCnXMe',
+        'callback' : verifyCallback,
+        'theme' : 'dark'
+      });
+    };
+  </script>
+</head>
+
+<body>
+    <form action="?" method="POST">
+        <div id="example3"></div>
+        <br>
+      </form>
+      <div id="demo" style="display:none;">
+          <app-root></app-root>
+      </div>
+</body>
+</html>
